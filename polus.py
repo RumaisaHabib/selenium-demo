@@ -85,7 +85,7 @@ def test4(driver):
     alert("Test 4 passed. Item successfully added to cart.", "Success")    
     
 def test5(driver):
-    contact_button = driver.find_element_by_css_selector("a[href='https://balarosh.com/contact/']")
+    contact_button = driver.find_element(By.CSS_SELECTOR, "a[href='https://balarosh.com/contact/']")
     contact_button.click()
 
     # fill in data
@@ -116,13 +116,15 @@ def main():
 
     currentTest = 1
     try:
-        # test1(driver)
-        # currentTest += 1
-        # test2(driver)
-        # currentTest += 1
-        # test3(driver)
-        # currentTest += 1
-        # test4(driver)
+        test1(driver)
+        currentTest += 1
+        test2(driver)
+        currentTest += 1
+        test3(driver)
+        currentTest += 1
+        test4(driver)
+        currentTest += 1
+        time.sleep(5)
         test5(driver)
     except AssertionError as e:
         print(e)
